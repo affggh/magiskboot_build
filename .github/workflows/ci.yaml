@@ -850,7 +850,7 @@ jobs:
 
           echo -e "\n### configure ###\n"
           . "$HOME/.cargo/env"
-          emcmake cmake -G Ninja -B build -DCMAKE_EXE_LINKER_FLAGS=" ${{ needs.vars.outputs.lto_ldflags }} ${{ env.ldflags }}" \
+          emcmake cmake -G Ninja -B build -DCMAKE_EXE_LINKER_FLAGS=" ${{ needs.vars.outputs.lto_ldflags }}" \
               -DRust_CARGO_TARGET=${{ env.rust_target }} -DFULL_RUST_LTO=${{ needs.vars.outputs.full_lto }} \
               -DCMAKE_BUILD_TYPE=${{ needs.vars.outputs.cmake_build_type }} -DPREFER_STATIC_LINKING=ON \
               -DCMAKE_TOOLCHAIN_FILE=$VCPKG_INSTALLATION_ROOT/scripts/buildsystems/vcpkg.cmake \
